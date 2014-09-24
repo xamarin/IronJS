@@ -31,7 +31,7 @@ namespace Benchmarks
             System.Threading.Thread.CurrentThread.Priority =
                 System.Threading.ThreadPriority.Highest;
 
-            var basePath = new DirectoryInfo(GetExecutableDirectory()).Parent.Parent.FullName;
+            var basePath = args.Length > 0 ? args[0] : new DirectoryInfo(GetExecutableDirectory()).Parent.Parent.FullName;
 
 #if !DISABLE_QUESTIONS
             if (ReadYesOrNo("Run SunSpider 0.9.1 benchmark, yes/no? "))
