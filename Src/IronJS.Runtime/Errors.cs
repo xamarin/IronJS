@@ -49,7 +49,7 @@ namespace IronJS.Runtime
     public class CompilerError : Error
     {
         public Tuple<int, int> Position { get; private set; }
-        public string Source { get; private set; }
+        public new string Source { get; private set; }
         public string Path { get; private set; }
 
         public CompilerError(string message, Tuple<int, int> position, string source, string path)

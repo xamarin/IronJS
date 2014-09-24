@@ -31,7 +31,7 @@ namespace IronJS.Runtime
         {
             MetaData = metaData;
             SharedScope = new BoxedValue[0];
-            DynamicScope = DynamicScope.Empty;
+            DynamicScope = FSharpList<Tuple<int, CommonObject>>.Empty;
         }
 
         public FunctionObject(Environment env)
@@ -39,7 +39,7 @@ namespace IronJS.Runtime
         {
             MetaData = env.GetFunctionMetaData(0UL);
             SharedScope = null;
-            DynamicScope = DynamicScope.Empty;
+            DynamicScope = FSharpList<Tuple<int, CommonObject>>.Empty;
         }
 
         public override string ClassName
